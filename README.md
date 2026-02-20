@@ -2,6 +2,8 @@
 
 A hands-free row counter Alexa skill for knitting and crochet. Track your rows without putting down your needles.
 
+**[Project page & quick reference](https://www.loosefloorboard.com/projects/craft-count)**
+
 ## Features
 
 - **Row counting** - Say "next row" to increment, "go back" to undo
