@@ -27,7 +27,9 @@
             "crafts",
             "fiber arts",
             "craft count"
-          ]
+          ],
+          "smallIconUri": "file://assets/images/en-US_smallIcon.png",
+          "largeIconUri": "file://assets/images/en-US_largeIcon.png"
         }
       },
       "isAvailableWorldwide": true,
@@ -39,7 +41,12 @@
       "usesPersonalInfo": false,
       "isChildDirected": false,
       "isExportCompliant": true,
-      "containsAds": false
+      "containsAds": false,
+      "locales": {
+        "en-US": {
+          "privacyPolicyUrl": "https://lizzy-schoen.github.io/craft-count/privacy-policy.html"
+        }
+      }
     }
   }
 }
