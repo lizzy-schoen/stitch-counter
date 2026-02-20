@@ -1,0 +1,64 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Stitch Counter - Alexa knitting row counter skill
+
+Parameters:
+  SkillId:
+    Type: String
+  LambdaRuntime:
+    Type: String
+    Default: nodejs18.x
+  LambdaHandler:
+    Type: String
+    Default: index.handler
+  CodeBucket:
+    Type: String
+  CodeKey:
+    Type: String
+  CodeVersion:
+    Type: String
+
+Globals:
+  Function:
+    Timeout: 8
+    MemorySize: 128
+
+Resources:
+  KnitCounterFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: knit-counter
+      Handler: !Ref LambdaHandler
+      Runtime: !Ref LambdaRuntime
+      CodeUri:
+        Bucket: !Ref CodeBucket
+        Key: !Ref CodeKey
+        Version: !Ref CodeVersion
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref KnitCounterTable
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref KnitCounterTable
+      Events:
+        AlexaSkill:
+          Type: AlexaSkill
+          Properties:
+            SkillId: !Ref SkillId
+
+  KnitCounterTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: KnitCounterTable
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+
+Outputs:
+  SkillEndpoint:
+    Description: Lambda function ARN for Alexa skill endpoint
+    Value: !GetAtt KnitCounterFunction.Arn

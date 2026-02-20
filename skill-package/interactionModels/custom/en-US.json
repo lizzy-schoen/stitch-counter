@@ -1,0 +1,227 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "stitch counter",
+      "intents": [
+        {
+          "name": "NextRowIntent",
+          "samples": [
+            "next row",
+            "next",
+            "go to the next row",
+            "move to the next row",
+            "increment",
+            "row done",
+            "done with this row",
+            "finished this row",
+            "advance",
+            "advance a row"
+          ]
+        },
+        {
+          "name": "PreviousRowIntent",
+          "samples": [
+            "go back a row",
+            "go back",
+            "previous row",
+            "back one row",
+            "undo",
+            "undo last row",
+            "I made a mistake",
+            "go back one",
+            "tink back"
+          ]
+        },
+        {
+          "name": "CurrentRowIntent",
+          "samples": [
+            "what row am I on",
+            "what's my row",
+            "current row",
+            "which row",
+            "what row",
+            "where am I",
+            "tell me the row",
+            "row number",
+            "my row number"
+          ]
+        },
+        {
+          "name": "ResetRowIntent",
+          "samples": [
+            "reset row counter",
+            "reset the counter",
+            "reset rows",
+            "start over",
+            "go back to row one",
+            "reset to zero",
+            "start from the beginning"
+          ]
+        },
+        {
+          "name": "CreateProjectIntent",
+          "slots": [
+            {
+              "name": "ProjectName",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "create a project called {ProjectName}",
+            "new project {ProjectName}",
+            "start a new project called {ProjectName}",
+            "add a project called {ProjectName}",
+            "create {ProjectName}",
+            "new project called {ProjectName}"
+          ]
+        },
+        {
+          "name": "SwitchProjectIntent",
+          "slots": [
+            {
+              "name": "ProjectName",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "switch to {ProjectName}",
+            "work on {ProjectName}",
+            "open {ProjectName}",
+            "change to {ProjectName}",
+            "go to {ProjectName}",
+            "load {ProjectName}",
+            "pull up {ProjectName}"
+          ]
+        },
+        {
+          "name": "ListProjectsIntent",
+          "samples": [
+            "list my projects",
+            "what projects do I have",
+            "show my projects",
+            "my projects",
+            "all projects",
+            "what am I working on",
+            "list projects"
+          ]
+        },
+        {
+          "name": "DeleteProjectIntent",
+          "slots": [
+            {
+              "name": "ProjectName",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "delete {ProjectName}",
+            "remove {ProjectName}",
+            "delete project {ProjectName}",
+            "remove project {ProjectName}"
+          ]
+        },
+        {
+          "name": "SetReminderIntent",
+          "slots": [
+            {
+              "name": "RowNumber",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "set a reminder for row {RowNumber}",
+            "reminder for row {RowNumber}",
+            "add a reminder for row {RowNumber}",
+            "add a note for row {RowNumber}",
+            "remind me on row {RowNumber}",
+            "set a note for row {RowNumber}"
+          ]
+        },
+        {
+          "name": "SetRelativeReminderIntent",
+          "slots": [
+            {
+              "name": "RowCount",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "in {RowCount} rows",
+            "remind me in {RowCount} rows",
+            "{RowCount} rows from now",
+            "in {RowCount} rows I need to",
+            "set a reminder in {RowCount} rows",
+            "reminder in {RowCount} rows"
+          ]
+        },
+        {
+          "name": "CaptureInstructionIntent",
+          "slots": [
+            {
+              "name": "ReminderInstruction",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "to {ReminderInstruction}",
+            "I need to {ReminderInstruction}",
+            "remind me to {ReminderInstruction}",
+            "it is {ReminderInstruction}",
+            "the instruction is {ReminderInstruction}"
+          ]
+        },
+        {
+          "name": "ListRemindersIntent",
+          "samples": [
+            "list my reminders",
+            "what reminders do I have",
+            "show reminders",
+            "my reminders",
+            "what are my row reminders",
+            "any reminders"
+          ]
+        },
+        {
+          "name": "DeleteReminderIntent",
+          "slots": [
+            {
+              "name": "RowNumber",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "delete reminder for row {RowNumber}",
+            "remove reminder on row {RowNumber}",
+            "clear reminder for row {RowNumber}",
+            "delete row {RowNumber} reminder",
+            "remove the reminder on row {RowNumber}"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        }
+      ]
+    }
+  }
+}

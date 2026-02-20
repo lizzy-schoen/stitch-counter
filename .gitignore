@@ -1,0 +1,6 @@
+node_modules/
+.ask/
+lambda/node_modules/
+lambda/package-lock.json
+*.zip
+.DS_Store
